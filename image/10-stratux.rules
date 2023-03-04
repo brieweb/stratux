@@ -24,6 +24,7 @@ SUBSYSTEM=="tty", ATTRS{idProduct}=="7028", ATTRS{idVendor}=="0403", OWNER="root
 #  Currently the BU-353-S4 and the TU-S9 (serialout) use the pl2303.
 
 SUBSYSTEMS=="usb", ATTRS{idVendor}=="067b", ATTRS{idProduct}=="2303", SYMLINK+="prolific%n"
+SUBSYSTEMS=="usb", ATTRS{idVendor}=="067b", ATTRS{idProduct}=="23a3", SYMLINK+="prolific%n"
 
 #SUBSYSTEMS=="usb", ATTRS{idVendor}=="067b", ATTRS{idProduct}=="2303", SYMLINK+="bu353s4"
 #SUBSYSTEMS=="usb", ATTRS{idVendor}=="067b", ATTRS{idProduct}=="2303", SYMLINK+="tu-s9"
