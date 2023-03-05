@@ -80,11 +80,10 @@ cd rtl-sdr
 git checkout 0847e93e0869feab50fd27c7afeb85d78ca04631 # Nov. 20, 2020
 mkdir build && cd build
 cmake .. -DENABLE_ZEROCOPY=0
-make -j8
+make -j2
 make install
 cd /root/
 rm -r rtl-sdr
-
 ldconfig
 
 #kalibrate-rtl
@@ -110,7 +109,7 @@ cd /root && rm -r WiringPi
 
 # Install golang
 cd /root
-wget https://go.dev/dl/go1.20.1.linux-arm64.tar.gz
+#wget https://go.dev/dl/go1.20.1.linux-arm64.tar.gz
 tar xzf go1.20.1.linux-arm64.tar.gz
 rm go1.20.1.linux-arm64.tar.gz
 
@@ -118,9 +117,10 @@ rm go1.20.1.linux-arm64.tar.gz
 cd /root/stratux
 
 make clean
-make -j8
+make -j2
 
 # Now also prepare the update file..
+echo "self update"
 cd /root/stratux/selfupdate
 ./makeupdate.sh
 mv /root/stratux/work/update-*.sh /root/
